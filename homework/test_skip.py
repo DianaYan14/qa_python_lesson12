@@ -14,7 +14,6 @@ def window(request):
     browser.config.driver_options = chrome_options
     browser.config.window_width = request.param[0]
     browser.config.window_height = request.param[1]
-    browser.open("https://github.com/")
     yield browser
     browser.quit()
 
@@ -22,13 +21,13 @@ def window(request):
 def test_github_desktop(window):
     if browser._config.window_width < 1280:
         pytest.skip('Ширина окна для мобильного теста')
-    browser.open('https://github.com/')
+    browser.open("https://github.com/")
     browser.element('a.HeaderMenu-link--sign-in').click()
 
 
 def test_github_mobile(window):
     if browser._config.window_width > 1279:
         pytest.skip('Ширина окна для десктоп теста')
-    browser.open('https://github.com/')
+    browser.open("https://github.com/")
     browser.element('.flex-column [aria-label="Toggle navigation"]').click()
     browser.element('a.HeaderMenu-link--sign-in').click()
