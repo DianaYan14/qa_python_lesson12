@@ -21,6 +21,7 @@ def size_browser(request):
 def test_github_desktop(size_browser):
     browser.open('https://github.com/')
     browser.element('a.HeaderMenu-link--sign-in').click()
+    browser.element('[type="submit"]').click()
 
 
 @pytest.mark.parametrize('size_browser', [(360, 740), (393, 851)], indirect=True)
@@ -28,3 +29,5 @@ def test_github_mobile(size_browser):
     browser.open('https://github.com/')
     browser.element('.flex-column [aria-label="Toggle navigation"]').click()
     browser.element('a.HeaderMenu-link--sign-in').click()
+    browser.element('[type="submit"]').click()
+

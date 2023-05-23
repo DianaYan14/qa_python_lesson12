@@ -30,9 +30,12 @@ def precondition_mobile(request):
 def test_desktop(precondition_desktop):
     browser.open('https://github.com/')
     browser.element('a.HeaderMenu-link--sign-in').click()
+    browser.element('[type="submit"]').click()
 
 
 def test_github_mobile(precondition_mobile):
     browser.open('https://github.com/')
     browser.element('.flex-column [aria-label="Toggle navigation"]').click()
     browser.element('a.HeaderMenu-link--sign-in').click()
+    browser.element('[type="submit"]').click()
+

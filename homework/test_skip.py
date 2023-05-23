@@ -23,6 +23,7 @@ def test_github_desktop(window):
         pytest.skip('Ширина окна для мобильного теста')
     browser.open("https://github.com/")
     browser.element('a.HeaderMenu-link--sign-in').click()
+    browser.element('[type="submit"]').click()
 
 
 def test_github_mobile(window):
@@ -31,3 +32,5 @@ def test_github_mobile(window):
     browser.open("https://github.com/")
     browser.element('.flex-column [aria-label="Toggle navigation"]').click()
     browser.element('a.HeaderMenu-link--sign-in').click()
+    browser.element('[type="submit"]').click()
+
