@@ -8,7 +8,7 @@ from selenium import webdriver
 """
 
 
-@pytest.fixture(params=[(1280, 720), (360, 740), (1920, 1080), (393, 851)])
+@pytest.fixture(params=[(1280, 720), (1980, 1080), (640, 360), (375, 667)])
 def window(request):
     chrome_options = webdriver.ChromeOptions()
     browser.config.driver_options = chrome_options

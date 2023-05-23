@@ -7,7 +7,7 @@ from selenium import webdriver
 """
 
 
-@pytest.fixture(params=[(1024, 768), (1280, 720), (1920, 1080)])
+@pytest.fixture(params=[(1280, 720), (1980, 1080)])
 def precondition_desktop(request):
     chrome_options = webdriver.ChromeOptions()
     browser.config.driver_options = chrome_options
@@ -17,7 +17,7 @@ def precondition_desktop(request):
     browser.quit()
 
 
-@pytest.fixture(params=[(360, 740), (393, 851), (414, 896)])
+@pytest.fixture(params=[(640, 360), (375, 667)])
 def precondition_mobile(request):
     chrome_options = webdriver.ChromeOptions()
     browser.config.driver_options = chrome_options

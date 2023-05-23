@@ -7,7 +7,7 @@ from selene import browser
 """
 
 
-@pytest.fixture(params=[(1280, 720), (1920, 1080), (360, 740), (393, 851)])
+@pytest.fixture(params=[(1280, 720), (1920, 1080), (640, 360), (375, 667)])
 def size_browser(request):
     chrome_options = webdriver.ChromeOptions()
     browser.config.driver_options = chrome_options
@@ -24,7 +24,7 @@ def test_github_desktop(size_browser):
     browser.element('[type="submit"]').click()
 
 
-@pytest.mark.parametrize('size_browser', [(360, 740), (393, 851)], indirect=True)
+@pytest.mark.parametrize('size_browser', [(640, 360), (375, 667)], indirect=True)
 def test_github_mobile(size_browser):
     browser.open('https://github.com/')
     browser.element('.flex-column [aria-label="Toggle navigation"]').click()
